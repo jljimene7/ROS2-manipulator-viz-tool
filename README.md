@@ -19,6 +19,11 @@ The following pre-requisites are necessary to run and develop the visualization 
 - [ros2_control](https://control.ros.org/jazzy/doc/getting_started/getting_started.html)
     - Ensure ros2_control-gazebo communication is set up. [ros2_control installation guide](https://control.ros.org/jazzy/doc/gz_ros2_control/doc/index.html)
 
+### Github Actions
+This repo implements various github actions to ensure a smooth CI/CD process and enable faster prototying. The actions implemented are described below:
+- [pylint.yaml](.github/workflows/pylint.yml) workflow: This action is designed to ensure that code is the highest quality. It will find all the python files in the repo and then produce a lint.txt as an artifact which can be downloaded from Github.
+- [colcon_build.yaml](.github/workflows/colcon_build.yml) workflow: This action will create a ros2_jazzy dev env, install any dependencies, and then build the workspace. This action ensures that the committed code can be build on another machine. Currently, the tests are skipped since the codebase is fairly new. This will be removed once the codebase develops.
+
 ## Development Milestones
 1. Implement environment tests to ensure that the development environment is correctly configured.
     - ROS 2 Jazzy: Is it installed and sourced?
@@ -33,3 +38,7 @@ The following pre-requisites are necessary to run and develop the visualization 
     - Configure ros2_control for the manipulator.
 4. Create a package for the visualization tool using rqt or rviz2.
 5. Create a package for motion planning using Dijkstra's algorithm.
+
+
+## TODO
+- Once the codebase is mature enough, remove the `skip-tests: true` line from the [colcon_build.yaml](.github/workflows/colcon_build.yml) workflow.
