@@ -3,7 +3,8 @@
 <package format="3">
   <name>manipulator_viz_plugin</name>
   <version>0.0.0</version>
-  <description>custom visualization tool for visualizing the data that is received from the ROS2 network</description>
+  <description>custom visualization tool for visualizing the data that is received from the ROS2
+    network </description>
   <maintainer email="phgandh2@ncsu.edu">Prem Gandhi</maintainer>
   <license>MIT</license>
 
